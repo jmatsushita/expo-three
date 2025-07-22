@@ -1,19 +1,18 @@
 import { Asset } from 'expo-asset';
-import { resolveAsync } from 'expo-asset-utils';
 
 export default async function resolveAsset(
   fileReference: any
 ): Promise<Asset[]> {
   const urls: Asset[] = [];
-  if (Array.isArray(fileReference)) {
-    for (const file of fileReference) {
-      const asset = await resolveAsync(file);
-      urls.push(asset);
-    }
-  } else {
-    const asset = await resolveAsync(fileReference);
+
+  const files = Array.isArray(fileReference) ? fileReference : [fileReference];
+
+  for (const file of files) {
+    const asset = Asset.fromModule(file);
+    await asset.downloadAsync();
     urls.push(asset);
   }
+
   return urls;
 }
 
@@ -25,8 +24,8 @@ export async function stringFromAsset(
       await asset.downloadAsync();
     }
     if (!asset.localUri) {
-      console.log(
-        "Error: You tried to download an Expo.Asset and for some reason it didn't cache... Known reasons are: it's an .mtl file"
+      console.warn(
+        "Warning: Asset localUri is still null after download. This may happen for unsupported file types like .mtl"
       );
     }
     return asset.localUri || asset.uri;

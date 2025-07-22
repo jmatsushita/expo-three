@@ -1,5 +1,5 @@
-import { resolveAsync } from 'expo-asset-utils';
 import { Platform, Image } from 'react-native';
+import { Asset } from 'expo-asset';
 
 import THREE from './Three';
 
@@ -23,7 +23,8 @@ export default class ExpoTextureLoader extends THREE.TextureLoader {
     loader.setPath(this.path);
 
     (async () => {
-      const nativeAsset = await resolveAsync(asset);
+      const nativeAsset = Asset.fromModule(asset);
+      await nativeAsset.downloadAsync();
 
       function parseAsset(image) {
         texture.image = image;

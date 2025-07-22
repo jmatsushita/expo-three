@@ -1,6 +1,6 @@
 {
   "name": "expo-three",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "sideEffects": true,
   "description": "Utilities for using THREE.js with Expo",
   "main": "build/index.js",
@@ -46,20 +46,18 @@
   "author": "Nikhilesh Sigatapu",
   "license": "MIT",
   "dependencies": {
-    "@expo/browser-polyfill": "^1.0.1",
-    "expo-asset-utils": "~3.0.0"
+    "@gravitance/browser-polyfill": "github:gravitance-es/browser-polyfill"
   },
   "peerDependencies": {
     "expo": "*",
     "expo-asset": "*",
-    "expo-file-system": "*",
     "expo-gl": "*",
     "react-native": "*",
     "three": "^0.166.0"
   },
   "devDependencies": {
-    "@types/react": "~18.2.45",
-    "@types/three": "^0.166.0",
+    "@types/react": "~19.1.8",
+    "@types/three": "^0.178.1",
     "babel-plugin-module-resolver": "^5.0.2",
     "eslint": "8.17.0",
     "eslint-config-prettier": "8.5.0",
@@ -71,18 +69,16 @@
     "eslint-plugin-react": "7.30.0",
     "eslint-plugin-react-native": "4.0.0",
     "eslint-plugin-reactotron": "^0.1.2",
-    "expo": "^51.0.17",
-    "expo-asset": "~9.0.2",
-    "expo-file-system": "~16.0.9",
-    "expo-module-scripts": "3.5.1",
-    "jest": "^29.3.1",
-    "jest-expo": "~50.0.4",
-    "prettier": "^2.8.8",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-native": "0.73.6",
-    "react-native-web": "~0.19.12",
-    "three": "^0.166.0"
+    "expo": "^53.0.20",
+    "expo-module-scripts": "4.1.9",
+    "jest": "^30.0.5",
+    "jest-expo": "~53.0.9",
+    "prettier": "^3.6.2",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-native": "0.80.1",
+    "react-native-web": "~0.20.0",
+    "three": "^0.178.0"
   },
   "jest": {
     "preset": "expo-module-scripts"

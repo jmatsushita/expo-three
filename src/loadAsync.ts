@@ -1,4 +1,4 @@
-import { resolveAsync } from 'expo-asset-utils';
+import { Asset } from 'expo-asset';
 
 import {
   loaderClassForExtension,
@@ -43,7 +43,10 @@ export default async function loadAsync(
     );
   }
   const asset = urls[0];
-  const url: string | null = (await resolveAsync(asset)).localUri;
+  
+  const resolvedAsset = Asset.fromModule(asset);
+  await resolvedAsset.downloadAsync();
+  const url: string | null = resolvedAsset.localUri;
 
   if (url == null) {
     throw new Error(
