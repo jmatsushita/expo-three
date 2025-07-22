@@ -1,4 +1,4 @@
-import '@expo/browser-polyfill';
+import '@gravitance/browser-polyfill';
 import './Three';
 
 import Renderer from './Renderer';

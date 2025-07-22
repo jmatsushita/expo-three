@@ -12,7 +12,7 @@ for (const loader of loaders) {
     default: jest.fn(),
   }));
 }
-jest.mock(`@expo/browser-polyfill`, () => {
+jest.mock(`@gravitance/browser-polyfill`, () => {
   return {
     __esModule: true,
     default: jest.fn(),
