@@ -78,7 +78,7 @@
     "react-dom": "19.0.0",
     "react-native": "0.79.4",
     "react-native-web": "~0.20.0",
-    "three": "^0.178.0"
+    "three": "^0.179.1"
   },
   "jest": {
     "preset": "expo-module-scripts"
