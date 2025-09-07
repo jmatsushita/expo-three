@@ -82,5 +82,6 @@
   },
   "jest": {
     "preset": "expo-module-scripts"
-  }
+  },
+  "packageManager": "yarn@4.9.4"
 }
